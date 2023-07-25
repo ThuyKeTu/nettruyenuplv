@@ -23,6 +23,7 @@
                 .then((response) => response.text())
                 .then((body) => {
                     var er = body
+                    console.log(er)
                     let succ = er.match(/"success":(.*?),/)[1]
                     if(succ=="true"){
                         let token = er.match(/"token":"(.*?)"/)[1]
@@ -41,7 +42,7 @@
                         })
                             .then((response) => response.text())
                             .then((body) => {
-                                console.log(body);
+                                // console.log(body);
                                 setTimeout(resolve,30000)
                             }); 
                     }
