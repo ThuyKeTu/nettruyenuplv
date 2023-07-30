@@ -10,7 +10,7 @@ var cokie_4 = ""
 
 
 var __count =0
-async function readchap(num,ctoken,cokie,numcokie){
+async function readchap(num,ctoken,cokie){
     await new Promise((resolve) => {
         let data = {
             chapterId: queue[num],
@@ -56,6 +56,8 @@ async function readchap(num,ctoken,cokie,numcokie){
                                 resolve()
                             }
                         }); 
+                }else{
+                    resolve()
                 }
             }); 
     })
@@ -64,7 +66,7 @@ async function readchap(num,ctoken,cokie,numcokie){
 
 async function main(){
     for(i=0;i<queue.length;i++){
-        await readchap(i,__token,cokie_1,'c1')
+        await readchap(i,__token,cokie_1)
     }
     main()
 }
