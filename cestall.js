@@ -31,12 +31,13 @@ async function readchap(num,ctoken,cokie,numcokie){
                 var er = body
                 let succ = er.match(/"success":(.*?),/)[1]
                 if(succ=="true"){
+                   resolve()
                     let token = er.match(/"token":"(.*?)"/)[1]
                     let dataread ={
                         chapterId: data.chapterId,
                         token: token
                     }
-        
+                    
                     fetch('https://f.nettruyenmax.com/Comic/Services/ComicService.asmx/Read',{
                         method: "POST",
                         headers: {
@@ -51,9 +52,7 @@ async function readchap(num,ctoken,cokie,numcokie){
                             console.log(body,__count)
                             if(succ2=='true'){
                                 __count++
-                                setTimeout(resolve,100)
                             }else{
-                                resolve()
                             }
                         }); 
                 }

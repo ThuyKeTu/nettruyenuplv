@@ -48,9 +48,10 @@ async function readchap(num,ctoken,cokie,numcokie){
                         .then((response) => response.text())
                         .then((body) => {
                             let succ2 = (body.match(/"success":(.*?),/)||[])[1]
-                            console.log(body,__count)
-                            if(succ2=='true'){
+                            if(succ2==true){
                                 __count++
+                                console.log(body,numcokie);
+
                                 setTimeout(resolve,100)
                             }else{
                                 resolve()
@@ -63,13 +64,11 @@ async function readchap(num,ctoken,cokie,numcokie){
 
 
 async function main(){
-    for(i=0;i<queue.length;i++){
-        await readchap(i,__token,cokie_1,'c1')
-        await readchap(i,__token,cokie_2,'c2')
-        await readchap(i,__token,cokie_3,'c3')
-        await readchap(i,__token,cokie_4,'c4')
-    }
-    main()
+    // for(i=0;i<queue.length;i++){
+    //     Promise.all( readchap(i,__token,cokie_1,'c1'),readchap(i,__token,cokie_2,'c2'),readchap(i,__token,cokie_3,'c3'),readchap(i,__token,cokie_4,'c4'))
+    // }
+    // main()
+    Promise.all(readchap(1,__token,cokie_1,'c1'),readchap(cokie_1,__token,cokie_2,'c2'),readchap(1,__token,cokie_3,'c3'),readchap(1,__token,cokie_4,'c4'))
 }
 
 main()

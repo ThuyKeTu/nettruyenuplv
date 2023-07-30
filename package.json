@@ -1,18 +1,15 @@
 {
-  "dependencies": {
-    "cross-fetch": "^4.0.0",
-    "node-fetch": "^3.3.1",
-    "request": "^2.88.2"
-  },
-  "name": "lv",
+  "name": "buff-views",
   "version": "1.0.0",
+  "description": "",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./main.js"
   },
+  "engines": {
+    "node": ">=15 <16"
+  },
   "author": "",
-  "license": "ISC",
-  "description": "",
-  "type": "module"
+  "license": "ISC"
 }
