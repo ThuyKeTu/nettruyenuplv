@@ -29,6 +29,7 @@ async function readchap(num,ctoken,cokie){
             .then((response) => response.text())
             .then((body) => {
                 var er = body
+                console.log(body)
                 let succ = (er.match(/"success":(.*?),/)||[])[1]
                 if(succ=="true"){
                     let token = er.match(/"token":"(.*?)"/)[1]
