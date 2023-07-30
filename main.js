@@ -67,7 +67,6 @@ async function main(){
         await readchap(i,__token,cokie_1,'c1')
         await readchap(i,__token,cokie_2,'c2')
         await readchap(i,__token,cokie_3,'c3')
-        await readchap(i,__token,cokie_4,'c4')
     }
     main()
 }
